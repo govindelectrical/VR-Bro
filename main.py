@@ -23,9 +23,9 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6920803794:AAHlsryRx1vNQe7FgdlbbnhxO6o5aFKr430",
-             api_id= 20463500,
-             api_hash= "5db9bc6439f7b43daa75689edf65b431"
+             bot_token= "6944466708:AAGiS73zYtTMBDd9P5_vhARwoaxkiHs8UqQ",
+             api_id= 28590119,
+             api_hash= "2494557bf21e6c5152f26070aa1a97c7"
 )
 
 @bot.on_message(filters.command(["start"]))
@@ -39,13 +39,13 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["pip"]))
+@bot.on_message(filters.command(["vr"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Now Send Me Your **txt** File & Follow Bot Instructions**")
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002008774612, x)
+        await bot.send_document(-1002094784974, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         
@@ -186,7 +186,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002008774612)
+                        await copy.copy(chat_id = -1002094784974)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -200,7 +200,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002008774612)
+                        await copy.copy(chat_id = -1002094784974)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
