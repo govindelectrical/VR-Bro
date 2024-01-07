@@ -23,9 +23,9 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6944466708:AAGiS73zYtTMBDd9P5_vhARwoaxkiHs8UqQ",
-             api_id= 28590119,
-             api_hash= "2494557bf21e6c5152f26070aa1a97c7"
+             bot_token= "6578569065:AAGRFhrfgfzzdDn6JNAmsFIZUfYSiWSR8lI",
+             api_id= 21104697,
+             api_hash= "2bbb3dc6c94bac3e5fcc492e86475063"
 )
 
 @bot.on_message(filters.command(["start"]))
@@ -39,13 +39,13 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["vr"]))
+@bot.on_message(filters.command(["gk"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Now Send Me Your **txt** File & Follow Bot Instructions**")
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002094784974, x)
+        await bot.send_document(-1001956100269, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         
@@ -108,7 +108,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name**\n**Ex : ** 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™")
+    await editable.edit("**Enter Your Name**\n**Ex : ** Govind Electrical")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -186,7 +186,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002094784974)
+                        await copy.copy(chat_id = -1001956100269)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -200,7 +200,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002094784974)
+                        await copy.copy(chat_id = -1001956100269)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
@@ -266,7 +266,7 @@ async def vision_pdf(bot: Client, m: Message):
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/","").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").strip()[:57]
             name = f'{str(count).zfill(3)}) {name1}'
-            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™ '
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** Govind Electrical '
             ka = await helper.vision(url, name, cookies)
             await m.reply_document(ka, caption=cc)
             count += 1
