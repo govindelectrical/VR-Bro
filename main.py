@@ -30,18 +30,18 @@ bot = Client("bot",
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hi 👋 Sir ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** Govind\n")
+    editable = await m.reply_text(f"Hi 👋 Bro ! How are You? I am Electric Hacker भेजो TXT File डाउनलोड कर देते हैं**\n\n☞ भाई हमें सिर्फ ग्रुप में यूज़ कर सकते हो**.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** Electric Hacker Team**\n")
   
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**Process Has Been Stopped Successfully !**", True)
+    await m.reply_text("**ले भाई रोक दिया 🚜**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 @bot.on_message(filters.command(["gk"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Now Send Me Your **txt** File & Follow Bot Instructions**")
+    editable = await m.reply_text(f"**Now Send Me Your **txt** भेजो डाउनलोड कर देते हैं**")
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
@@ -62,7 +62,7 @@ async def account_login(bot: Client, m: Message):
             os.remove(x)
             # print(len(links)
         except:
-            await m.reply_text("Invalid file input.🥲")
+            await m.reply_text("bhkk mtlb kuchh v.🥲")
             os.remove(x)
             return
     else:
@@ -72,12 +72,12 @@ async def account_login(bot: Client, m: Message):
         for i in content:
             links.append(i.split("://", 1))
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend Number From Where You want to Download initial is **1**")
+    await editable.edit(f"देख भाई कितना लिंक है 🚀**{len(links)}**\n\nअब बोलो कहां से डाउनलोड करूं?**Likh n bhai**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Enter Batch Name or Send `d` To Grab Batch Name From Txt File**")
+    await editable.edit("**Enter Batch Name or Send `d` कौन सा Batch है Bro**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
@@ -86,7 +86,7 @@ async def account_login(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**Enter Resolution Ex :** 480 or 720")
+    await editable.edit("**किस Resolution में डाउनलोड करूं? Ex :** 480 or 720")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -108,7 +108,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name**\n**Ex : ** Govind Electrical")
+    await editable.edit("**Enter Your Name भाई क्रेडिट तो लेना चाहते हो ना 😝😝**\n**Ex : ** Electric Hacker Team")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -117,7 +117,7 @@ async def account_login(bot: Client, m: Message):
     else:
         CR = raw_text3
 
-    await editable.edit("Now Send Your **Thumb url**\nEg : `https://telegra.ph/file/7b060bedc493fa9be744f.jpg`\n\nOr Send **no**")
+    await editable.edit("खुद का Thumbnail भी लगाना चाहते हो? **Thumb url**\nEg : `https://telegra.ph/file/7b060bedc493fa9be744f.jpg`\n\nOr Send **no**")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -180,8 +180,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}({res}) 『 Govind Electrical 』.mp4\n**Batch Name :** {b_name}\n\n**Extracted By ➤** {CR}'
-                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1} 『 Govind Electrical 』.pdf\n**Batch Name :**{b_name}\n\n**Extracted By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Topic :** {name1}({res}) 『 Electric Hacker 』.mp4\n**Batch :** {b_name}\n\n**Provided By ➤** {CR}'
+                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**Topic :** {name1} 『 Electric Hacker 』.pdf\n**Batch :**{b_name}\n\n**Provided By ➤** {CR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -208,7 +208,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **Electric Hacker Team ")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -216,7 +216,7 @@ async def account_login(bot: Client, m: Message):
                     count += 1
 
             except Exception as e:
-                await m.reply_text(f"**This #Failed File is not Counted**\n**Name ➤** `{name}`\n**Link ➤** `{url}`\n\n ** Failed Reason ➤** {e}")
+                await m.reply_text(f"**धत तेरी का 😠 sorry bro मैं डाउनलोड नहीं कर सकता**\n**Name ➤** `{name}`\n**Link ➤** `{url}`\n\n ** Failed Reason ➤** {e}")
                 count += 1
                 continue
 
@@ -225,7 +225,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done ✅")
 @bot.on_message(filters.command(["vpdf"]))
 async def vision_pdf(bot: Client, m: Message):
-    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 : 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇\n")
+    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 : Electric Hacker Team\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
